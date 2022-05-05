@@ -1,0 +1,42 @@
+{
+  "name": "bringertestappbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "migrateup": "knex migrate:up",
+    "migratedown": "knex migrate:down",
+    "migrateh": "heroku run knex migrate:latest -a bringertestapp",
+    "rollbackh": "heroku run knex migrate:rollback -a bringertestapp",
+    "databaseh": "heroku pg:psql -a bringertestapp",
+    "seedh": "heroku run knex seed:run -a bringertestapp",
+    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand",
+    "deploy": "git push heroku main"
+  },
+  "engines": {
+    "node": "14.16.1",
+    "npm": "7.23.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^1.0.7",
+    "knex-cleaner": "^1.3.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
