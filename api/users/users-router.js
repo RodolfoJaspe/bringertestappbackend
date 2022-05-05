@@ -24,7 +24,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-router.post('/register', ValidateUserNameUnique, ValidateRegistration, async (req, res, next) => {
+router.post('/register', ValidateUserNameUnique, /*ValidateRegistration,*/ async (req, res, next) => {
 
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 8);

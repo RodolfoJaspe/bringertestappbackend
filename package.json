@@ -16,7 +16,7 @@
     "databaseh": "heroku pg:psql -a bringertestapp",
     "seedh": "heroku run knex seed:run -a bringertestapp",
     "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand",
-    "deploy": "git push heroku main"
+    "deploy": "git push heroku master"
   },
   "engines": {
     "node": "14.16.1",
