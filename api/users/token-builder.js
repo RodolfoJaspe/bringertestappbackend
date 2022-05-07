@@ -3,7 +3,7 @@ const {JWT_SECRET} = require("../secrets")
 
 module.exports = (user) => {
     const payload = {
-        subject: user.user_id, // may change depending on migration. 
+        subject: user.user_id,
         username: user.username
     }
 

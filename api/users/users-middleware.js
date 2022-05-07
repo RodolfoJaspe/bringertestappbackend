@@ -13,6 +13,8 @@ const restricted = (req, res, next) => {
             if(err){
                 console.log("error in the verify")
                 res.status(401).json({message:"Token invalid" + err.message})
+            }else if(decoded.subject != Number(req.params.id)){
+                res.status(401).json({message: "Wrong user"})
             }else {
                 console.log("good token")
                 req.decodedToken = decoded   
